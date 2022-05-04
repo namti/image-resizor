@@ -1,7 +1,7 @@
 {
 	"name": "image-resizor",
-	"version": "1.0.1",
-	"description": "Resizing images (jpg, png, heic, heif) and correcting the image orientation.",
+	"version": "1.0.3",
+	"description": "Resizing images (jpg, png, heic, heif) and correcting the image orientation in browsers.",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"

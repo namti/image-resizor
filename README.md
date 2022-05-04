@@ -1,5 +1,5 @@
 # image-resizor
-This package support resizing images and correcting the image orientation in browsers.
+This package supports resizing images and correcting the image orientation in browsers.
 
 Supported formats: `jpg`, `jpeg`, `png`, `heic`, `heif`
 
@@ -19,11 +19,26 @@ new ImageResizor(file, {
   quality: .8,
 })
   .init()
-  .then(instance => {
-    console.log(instance.toDataURL());
-  })
+  .then(instance => console.log(instance.toDataURL()))
   .catch(e => console.error(e));
 ```
+
+
+## Arguments
+
+`new ImageResizor(file[, { ...options }])`
+
+
+
+### Options:
+
+| Key        | Type     | Default     | Options                                                     |
+| ---------- | -------- | ----------- | ---------------------------------------------------- |
+| maxWidth   | `int`    | 2200        |                                                      |
+| maxHeight  | `int`    | 2200        |                                                      |
+| scale      | `number` | 1           | 0 - 1                                                |
+| outputType | `string`   | `"image/png"` | `"image/png"` `"image/jpeg"`                          |
+| quality    | `number` | 1           | 0 - 1 <br/>availabe if the `outputType` is `"image/jpeg"` |
 
 
 
@@ -35,29 +50,12 @@ new ImageResizor(file, {
 
 
 
-After `init()` , you can invoke the functions below to modify the options. 
+
+**After `init()` , you can call functions below to modify the options.**
 
 `setMaxSize(maxWidthAndHeight|maxWidth[, maxHeight])`
 
 `resize(widthAndHeight|width[, height])`
 
 `scale(value)`
-
-
-
-## Arguments
-
-`new ImageResizor(file[, { ...options }])`
-
-
-
-Options:
-
-| Key        | Type     | Default     | Options                                                     |
-| ---------- | -------- | ----------- | ---------------------------------------------------- |
-| maxWidth   | `int`    | 2200        |                                                      |
-| maxHeight  | `int`    | 2200        |                                                      |
-| scale      | `number` | 1           | 0 - 1                                                |
-| outputType | `string`   | `"image/png"` | `"image/png"` `"image/jpeg"`                          |
-| quality    | `number` | 1           | 0 - 1 <br/>availabe if the `outputType` is `"image/jpeg"` |
 
