@@ -1,7 +1,7 @@
 {
 	"name": "image-resizor",
 	"version": "1.0.4",
-	"description": "Resizing images (jpg, png, heic, heif) and correcting the image orientation in browsers.",
+	"description": "Resizing images (jpg, png, heic, heif) in browsers.",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/namti/image-resizor.git"
@@ -23,7 +23,6 @@
 		"heif",
 		"jpg",
 		"png",
-		"rotate",
 		"portrait",
 		"landscape",
 		"restore",
