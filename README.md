@@ -27,13 +27,13 @@ new ImageResizor(file, {
 
 ## Methods
 
-`toDataURL()`
+`toDataURL()` returs the base64 code.
 
-Return the base64 code.
+`toBlob()` `async` returs a binary object.
 
-`toBlob()` `async`
 
-Return a binary object.
+
+After `init()` , you can invoke the functions below to modify the options. 
 
 `setMaxSize([maxWidth, maxHeight])`
 
@@ -45,7 +45,13 @@ Return a binary object.
 
 ## Arguments
 
-| Option     | Type     | Default     |                                                      |
+`constructor(file, [options])`
+
+
+
+Options:
+
+| Key        | Type     | Default     |                                                      |
 | ---------- | -------- | ----------- | ---------------------------------------------------- |
 | maxWidth   | `int`    | 2200        |                                                      |
 | maxHeight  | `int`    | 2200        |                                                      |
