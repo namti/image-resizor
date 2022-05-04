@@ -18,6 +18,7 @@
 		"read",
 		"load",
 		"resize",
+		"resizer",
 		"heic",
 		"heif",
 		"jpg",
