@@ -1,6 +1,6 @@
-import ImageResize from './imageResize';
+import ImageResizor from './imageResizor';
 
-export default ImageResize;
+export default ImageResizor;
 export {
-	ImageResize,
+	ImageResizor,
 };

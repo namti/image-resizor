@@ -1,7 +1,7 @@
 import ExifReader from 'exifreader';
 import heic2any from "heic2any";
 
-class ImageResize{
+class ImageResizor{
 	constructor(file, options = {}){
 		this.options = { ...defaultOptions, ...options };
 		this.exif = {};
@@ -205,4 +205,4 @@ const defaultOptions = {
 	outputType: imageBitmapTypes.png,
 };
 
-export default ImageResize;
+export default ImageResizor;
