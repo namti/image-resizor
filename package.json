@@ -1,0 +1,45 @@
+{
+	"name": "image-resize",
+	"version": "1.0.0",
+	"description": "Resizing images (jpg, png, heic, heif) and correcting the orientation.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"photo",
+		"picture",
+		"image",
+		"read",
+		"load",
+		"resize",
+		"heic",
+		"heif",
+		"jpg",
+		"png",
+		"rotate",
+		"portrait",
+		"landscape",
+		"restore",
+		"repair",
+		"keep",
+		"correct",
+		"orient",
+		"orientation",
+		"compress",
+		"crop",
+		"maxWidth",
+		"maxHeight",
+		"max",
+		"size",
+		"aspect",
+		"ratio",
+		"reduce"
+	],
+	"author": "Jasper Yan",
+	"license": "ISC",
+	"peerDependencies": {
+		"exifreader": "^4.5.0",
+		"heic2any": "^0.0.3"
+	}
+}
