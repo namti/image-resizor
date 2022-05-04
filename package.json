@@ -1,6 +1,6 @@
 {
 	"name": "image-resizor",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Resizing images (jpg, png, heic, heif) and correcting the image orientation.",
 	"main": "index.js",
 	"scripts": {
