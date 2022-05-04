@@ -1,5 +1,7 @@
 # image-resizor
-This package resizes images (jpg, png, heic, heif) and corrects the image orientation.
+This package support resizing images and correcting the image orientation in browsers.
+
+Supported formats: `jpg`, `jpeg`, `png`, `heic`, `heif`
 
 
 
@@ -18,26 +20,26 @@ new ImageResizor(file, {
 })
   .init()
   .then(instance => {
-		console.log(instance.toDataURL());
+    console.log(instance.toDataURL());
   })
   .catch(e => console.error(e));
 ```
 
 
 
-## Methods
+## API
 
-`toDataURL()` returs the base64 code.
+`toDataURL()` returns the base64 code.
 
-`toBlob()` `async` returs a binary object.
+`toBlob()` `async` returns a binary object.
 
 
 
 After `init()` , you can invoke the functions below to modify the options. 
 
-`setMaxSize([maxWidth, maxHeight])`
+`setMaxSize(maxWidthAndHeight|maxWidth[, maxHeight])`
 
-`resize([width, height])`
+`resize(widthAndHeight|width[, height])`
 
 `scale(value)`
 
@@ -45,17 +47,17 @@ After `init()` , you can invoke the functions below to modify the options.
 
 ## Arguments
 
-`constructor(file, [options])`
+`new ImageResizor(file[, { ...options }])`
 
 
 
 Options:
 
-| Key        | Type     | Default     |                                                      |
+| Key        | Type     | Default     | Options                                                     |
 | ---------- | -------- | ----------- | ---------------------------------------------------- |
 | maxWidth   | `int`    | 2200        |                                                      |
 | maxHeight  | `int`    | 2200        |                                                      |
 | scale      | `number` | 1           | 0 - 1                                                |
-| outputType | `MIME`   | `image/png` | `image/jpeg` `image/png`                             |
-| quality    | `number` | 1           | 0 - 1 (availabe if the `outputType` is `image/jpeg`) |
+| outputType | `string`   | `"image/png"` | `"image/png"` `"image/jpeg"`                          |
+| quality    | `number` | 1           | 0 - 1 <br/>availabe if the `outputType` is `"image/jpeg"` |
 
