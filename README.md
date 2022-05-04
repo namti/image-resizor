@@ -1,5 +1,5 @@
 # image-resizor
-This package supports resizing images and correcting the image orientation in browsers.
+This package supports resizing and converting images in browsers.
 
 Supported formats: `jpg`, `jpeg`, `png`, `heic`, `heif`
 
