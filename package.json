@@ -1,5 +1,5 @@
 {
-	"name": "image-resize",
+	"name": "image-resizor",
 	"version": "1.0.0",
 	"description": "Resizing images (jpg, png, heic, heif) and correcting the image orientation.",
 	"main": "index.js",
@@ -10,6 +10,7 @@
 		"photo",
 		"picture",
 		"image",
+		"bitmap",
 		"read",
 		"load",
 		"resize",
@@ -34,6 +35,7 @@
 		"size",
 		"aspect",
 		"ratio",
+		"canvas",
 		"reduce"
 	],
 	"author": "Jasper Yan",
