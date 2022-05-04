@@ -1,7 +1,7 @@
 {
 	"name": "image-resize",
 	"version": "1.0.0",
-	"description": "Resizing images (jpg, png, heic, heif) and correcting the orientation.",
+	"description": "Resizing images (jpg, png, heic, heif) and correcting the image orientation.",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
