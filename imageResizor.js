@@ -21,8 +21,7 @@ class ImageResizor{
 						[ this.isRotated() ? 'width' : 'height']: this.exif?.['Image Height']?.value || this.exif?.['ImageLength']?.value || this.exif?.['PixelYDimension']?.value || defaultCanvas.height,
 					}
 					this.createCanvas();
-
-					this.toBlob().then(blob => resolve(this));
+					resolve(this);
 				})
 				.catch(err => reject(err));
 		});
