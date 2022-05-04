@@ -6,9 +6,11 @@
 		"type": "git",
 		"url": "https://github.com/namti/image-resizor.git"
 	},
-	"main": "index.js",
+	"main": "lib/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"watch": "watch 'npm run build' ./src",
+		"build": "babel src -d lib"
 	},
 	"keywords": [
 		"photo",
@@ -48,5 +50,11 @@
 	"peerDependencies": {
 		"exifreader": "^4.5.0",
 		"heic2any": "^0.0.3"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.17.10",
+		"@babel/core": "^7.17.10",
+		"@babel/preset-env": "^7.17.10",
+		"watch": "^1.0.2"
 	}
 }
