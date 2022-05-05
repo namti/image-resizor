@@ -1,6 +1,6 @@
 {
 	"name": "image-resizor",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "Resizing and converting images (jpg, png, heic, heif) in browsers.",
 	"repository": {
 		"type": "git",
@@ -10,7 +10,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"watch": "watch 'npm run build' ./src",
-		"build": "babel src -d lib"
+		"build": "babel src -d lib --presets minify"
 	},
 	"keywords": [
 		"photo",
@@ -21,25 +21,21 @@
 		"load",
 		"resize",
 		"resizer",
+		"crop",
 		"heic",
 		"heif",
 		"jpg",
 		"png",
-		"portrait",
-		"landscape",
-		"restore",
-		"repair",
-		"keep",
-		"correct",
-		"orient",
-		"orientation",
 		"convert",
 		"compress",
 		"crop",
+		"width",
+		"height",
 		"maxWidth",
 		"maxHeight",
 		"max",
 		"size",
+		"scale",
 		"aspect",
 		"ratio",
 		"canvas",
@@ -48,13 +44,13 @@
 	"author": "Jasper Yan",
 	"license": "ISC",
 	"peerDependencies": {
-		"exifreader": "^4.5.0",
 		"heic2any": "^0.0.3"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.17.10",
 		"@babel/core": "^7.17.10",
 		"@babel/preset-env": "^7.17.10",
+		"babel-preset-minify": "^0.5.1",
 		"watch": "^1.0.2"
 	}
 }
