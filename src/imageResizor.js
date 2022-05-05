@@ -103,24 +103,41 @@ class ImageResizor{
 			};
 		})();
 
-		if(this.imageInfo.width > maxWidth || this.imageInfo.height > maxHeight){
-			if(this.imageInfo.width > this.imageInfo.height){
-				let ratio = maxWidth / this.imageInfo.width;
-				this.imageInfo = {
-					...this.imageInfo,
-					width: maxWidth,
-					height: this.imageInfo.height * ratio,
-				};
-			}else{
-				let ratio = maxHeight / this.imageInfo.height;
-				this.imageInfo = {
-					...this.imageInfo,
-					width: this.imageInfo.width * ratio,
-					height: maxHeight,
-				};
+		const adjustWidth = () => {
+			let ratio = maxWidth / this.imageInfo.width;
+			this.imageInfo = {
+				...this.imageInfo,
+				width: maxWidth,
+				height: this.imageInfo.height * ratio,
+			};
+		};
+
+		const adjustHeight = () => {
+			let ratio = maxHeight / this.imageInfo.height;
+			this.imageInfo = {
+				...this.imageInfo,
+				width: this.imageInfo.width * ratio,
+				height: maxHeight,
+			};
+		};
+
+		if(this.imageInfo.width >= this.imageInfo.height){ // if image width is longer than or equal to height
+			if(this.imageInfo.width > maxWidth){
+				adjustWidth();
 			}
-			this.resize(this.imageInfo.width, this.imageInfo.height);
+			if(this.imageInfo.height > maxHeight){
+				adjustHeight();
+			}
+		}else{ // if image height is longer than width
+			if(this.imageInfo.height > maxHeight){
+				adjustHeight();
+			}
+			if(this.imageInfo.width > maxWidth){
+				adjustWidth();
+			}
 		}
+
+		this.resize(this.imageInfo.width, this.imageInfo.height);
 	}
 
 	resize(){
@@ -149,7 +166,7 @@ class ImageResizor{
 		return this.canvas.toDataURL(this.options.outputType, this.options.quality);
 	}
 
-	async toBlob(){
+	toBlob(){
 		return new Promise((resolve) => {
 			const setBlob = (res) => {
 				resolve(res);
@@ -157,7 +174,6 @@ class ImageResizor{
 
 			this.renderImage();
 			this.canvas.toBlob(setBlob, this.options.outputType, this.options.quality);
-
 		});
 	}
 }
