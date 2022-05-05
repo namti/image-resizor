@@ -168,6 +168,7 @@ const imageBitmapTypes = {
 	'png': 'image/png',
 	'heic': 'image/heic',
 	'heif': 'image/heif',
+	'webp': 'image/webp',
 };
 
 const defaultCanvas = {
