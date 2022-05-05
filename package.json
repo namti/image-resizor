@@ -1,6 +1,6 @@
 {
 	"name": "image-resizor",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Resizing and converting images (jpg, png, heic, heif) in browsers.",
 	"repository": {
 		"type": "git",

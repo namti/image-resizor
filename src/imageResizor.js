@@ -16,6 +16,11 @@ class ImageResizor{
 		return new Promise((resolve, reject) => {
 			this.loadImage(this.file)
 				.then(result => {
+
+					if(window._dev){
+						console.log(this);
+					}
+
 					this.imageInfo = {
 						[ this.isRotated() ? 'height' : 'width']: this.exif?.['Image Width']?.value || this.exif?.['ImageWidth']?.value || this.exif?.['PixelXDimension']?.value || defaultCanvas.width,
 						[ this.isRotated() ? 'width' : 'height']: this.exif?.['Image Height']?.value || this.exif?.['ImageLength']?.value || this.exif?.['PixelYDimension']?.value || defaultCanvas.height,
@@ -32,7 +37,8 @@ class ImageResizor{
 			this.exif?.Orientation?.value == 5 || 
 			this.exif?.Orientation?.value == 6 ||
 			this.exif?.Orientation?.value == 7 || 
-			this.exif?.Orientation?.value == 8
+			this.exif?.Orientation?.value == 8 ||
+			this.exif?.Orientation === undefined
 		);
 	};
 
