@@ -44,6 +44,8 @@ new ImageResizor(file, {
 
 ## API
 
+### Instance
+
 `toDataURL()` returns the base64 code.
 
 `toBlob()` `async` returns a binary object.
@@ -59,3 +61,15 @@ new ImageResizor(file, {
 
 `scale(value)`
 
+### Static Methods
+
+`getSupportedTypes()` returns an object with file types and MIME types that are supported by this package.
+e.g. 
+```json
+{
+  'png': 'image/png',
+  'jpg': 'image/jpeg',
+  'jpeg': 'image/jpeg',
+  ...
+}
+```

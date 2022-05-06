@@ -10,6 +10,10 @@ class ImageResizor{
 		this.canvasContext = null;
 	}
 
+	static getSupportedTypes(){
+		return imageBitmapTypes;
+	}
+
 	init(){
 		return new Promise((resolve, reject) => {
 			this.loadImage(this.file)
