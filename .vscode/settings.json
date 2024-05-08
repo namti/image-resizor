@@ -1,0 +1,16 @@
+{
+	"eslint.format.enable": true,
+	"eslint.alwaysShowStatus": true,
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"editor.codeActionsOnSave": { 
+		"source.fixAll.eslint": true
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"editor.detectIndentation": false,
+	"editor.tabSize": 2,
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	}
+}

@@ -1,9 +1,0 @@
-{
-	"presets": [
-		"@babel/preset-env", 
-		["minify", {
-			"evaluate": false,
-			"mangle": true
-		}]
-	]
-}
