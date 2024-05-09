@@ -1,20 +1,20 @@
 var H0 = Object.defineProperty;
-var S0 = (M, p, w) => p in M ? H0(M, p, { enumerable: !0, configurable: !0, writable: !0, value: w }) : M[p] = w;
-var g0 = (M, p, w) => (S0(M, typeof p != "symbol" ? p + "" : p, w), w);
+var S0 = (M, E, w) => E in M ? H0(M, E, { enumerable: !0, configurable: !0, writable: !0, value: w }) : M[E] = w;
+var g0 = (M, E, w) => (S0(M, typeof E != "symbol" ? E + "" : E, w), w);
 var x0 = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
 function P0(M) {
   return M && M.__esModule && Object.prototype.hasOwnProperty.call(M, "default") ? M.default : M;
 }
 var M0 = { exports: {} };
-(function(M, p) {
-  (function(w, I, L, Z) {
+(function(M, E) {
+  (function(w, I, r0, Z) {
     function m0() {
       return P.isValid();
     }
     function i0() {
       return P.isValid();
     }
-    function E() {
+    function p() {
       var r = { getUserMedia: !0 };
       return P.isValid(r);
     }
@@ -60,12 +60,12 @@ var M0 = { exports: {} };
       }
       function i() {
         var h, k, F, b, m, u, l, G, Q, S, n0, J, e0, D0;
-        for (A0 > y && (s = 1), X = 30 + (s - 1) / 3, J = V, e0 = 0, D0 = y, n0 = y / (3 * s), S = n0 / $ | 0, G = X0, u = f0, l = u >> s0, 1 >= l && (l = 0), h = 0; l > h; h++)
-          E0[h] = G * ((l * l - h * h) * I0 / (l * l));
+        for (A0 > y && (s = 1), X = 30 + (s - 1) / 3, J = V, e0 = 0, D0 = y, n0 = y / (3 * s), S = n0 / q | 0, G = X0, u = f0, l = u >> s0, 1 >= l && (l = 0), h = 0; l > h; h++)
+          p0[h] = G * ((l * l - h * h) * I0 / (l * l));
         for (Q = A0 > y ? 3 : y % T !== 0 ? 3 * T : y % C !== 0 ? 3 * C : y % Y !== 0 ? 3 * Y : 3 * D, h = 0; n0 > h; )
           if (F = (255 & J[e0 + 0]) << H, b = (255 & J[e0 + 1]) << H, m = (255 & J[e0 + 2]) << H, k = c(F, b, m), v(G, k, F, b, m), l !== 0 && o(l, k, F, b, m), e0 += Q, e0 >= D0 && (e0 -= y), h++, S === 0 && (S = 1), h % S === 0)
             for (G -= G / X, u -= u / v0, l = u >> s0, 1 >= l && (l = 0), k = 0; l > k; k++)
-              E0[k] = G * ((l * l - k * k) * I0 / (l * l));
+              p0[k] = G * ((l * l - k * k) * I0 / (l * l));
       }
       function f(h, k, F) {
         var b, m, u, l, G, Q, S;
@@ -84,7 +84,7 @@ var M0 = { exports: {} };
       function o(h, k, F, b, m) {
         var u, l, G, Q, S, n0, J;
         for (G = k - h, -1 > G && (G = -1), Q = k + h, Q > d && (Q = d), u = k + 1, l = k - 1, n0 = 1; Q > u || l > G; ) {
-          if (S = E0[n0++], Q > u) {
+          if (S = p0[n0++], Q > u) {
             J = g[u++];
             try {
               J[0] -= S * (J[0] - F) / u0 | 0, J[1] -= S * (J[1] - b) / u0 | 0, J[2] -= S * (J[2] - m) / u0 | 0;
@@ -107,10 +107,10 @@ var M0 = { exports: {} };
       function c(h, k, F) {
         var b, m, u, l, G, Q, S, n0, J, e0;
         for (n0 = ~(1 << 31), J = n0, Q = -1, S = Q, b = 0; d > b; b++)
-          e0 = g[b], m = e0[0] - h, 0 > m && (m = -m), u = e0[1] - k, 0 > u && (u = -u), m += u, u = e0[2] - F, 0 > u && (u = -u), m += u, n0 > m && (n0 = m, Q = b), l = m - (d0[b] >> z - H), J > l && (J = l, S = b), G = k0[b] >> t0, k0[b] -= G, d0[b] += G << r0;
+          e0 = g[b], m = e0[0] - h, 0 > m && (m = -m), u = e0[1] - k, 0 > u && (u = -u), m += u, u = e0[2] - F, 0 > u && (u = -u), m += u, n0 > m && (n0 = m, Q = b), l = m - (d0[b] >> z - H), J > l && (J = l, S = b), G = k0[b] >> t0, k0[b] -= G, d0[b] += G << $;
         return k0[Q] += a0, d0[Q] -= o0, S;
       }
-      var X, V, y, s, g, d = 256, T = 499, C = 491, Y = 487, D = 503, A0 = 3 * D, O = d - 1, H = 4, $ = 100, z = 16, x = 1 << z, r0 = 10, t0 = 10, a0 = x >> t0, o0 = x << r0 - t0, c0 = d >> 3, s0 = 6, h0 = 1 << s0, f0 = c0 * h0, v0 = 30, p0 = 10, X0 = 1 << p0, G0 = 8, I0 = 1 << G0, _0 = p0 + G0, u0 = 1 << _0, b0 = [], d0 = [], k0 = [], E0 = [];
+      var X, V, y, s, g, d = 256, T = 499, C = 491, Y = 487, D = 503, A0 = 3 * D, O = d - 1, H = 4, q = 100, z = 16, x = 1 << z, $ = 10, t0 = 10, a0 = x >> t0, o0 = x << $ - t0, c0 = d >> 3, s0 = 6, h0 = 1 << s0, f0 = c0 * h0, v0 = 30, Z0 = 10, X0 = 1 << Z0, G0 = 8, I0 = 1 << G0, _0 = Z0 + G0, u0 = 1 << _0, b0 = [], d0 = [], k0 = [], p0 = [];
       r.apply(this, arguments);
       var w0 = {};
       return w0.map = f, w0.process = n, w0;
@@ -161,21 +161,21 @@ var M0 = { exports: {} };
             y[s++] = 255 & x, x >>= 8, z -= 8, s === Y + 256 && (y[Y] = 255, Y = s++);
         }
         function C(f0) {
-          x |= f0 << z, z += $, T(8);
+          x |= f0 << z, z += q, T(8);
         }
         y[s++] = g;
-        var Y = s++, D = 1 << g, A0 = D - 1, O = D + 1, H = O + 1, $ = g + 1, z = 0, x = 0, r0 = d[0] & A0, t0 = {};
+        var Y = s++, D = 1 << g, A0 = D - 1, O = D + 1, H = O + 1, q = g + 1, z = 0, x = 0, $ = d[0] & A0, t0 = {};
         C(D);
         for (var a0 = 1, o0 = d.length; o0 > a0; ++a0) {
-          var c0 = d[a0] & A0, s0 = r0 << 8 | c0, h0 = t0[s0];
+          var c0 = d[a0] & A0, s0 = $ << 8 | c0, h0 = t0[s0];
           if (h0 === Z) {
-            for (x |= r0 << z, z += $; z >= 8; )
+            for (x |= $ << z, z += q; z >= 8; )
               y[s++] = 255 & x, x >>= 8, z -= 8, s === Y + 256 && (y[Y] = 255, Y = s++);
-            H === 4096 ? (C(D), H = O + 1, $ = g + 1, t0 = {}) : (H >= 1 << $ && ++$, t0[s0] = H++), r0 = c0;
+            H === 4096 ? (C(D), H = O + 1, q = g + 1, t0 = {}) : (H >= 1 << q && ++q, t0[s0] = H++), $ = c0;
           } else
-            r0 = h0;
+            $ = h0;
         }
-        return C(r0), C(O), T(1), Y + 1 === s ? y[Y] = 0 : (y[Y] = s - Y - 1, y[s++] = 0), s;
+        return C($), C(O), T(1), Y + 1 === s ? y[Y] = 0 : (y[Y] = s - Y - 1, y[s++] = 0), s;
       }
       var e = 0;
       i = i === Z ? {} : i;
@@ -203,15 +203,15 @@ var M0 = { exports: {} };
         for (var A0 = f(D), O = 0; A0 >>= 1; )
           ++O;
         A0 = 1 << O;
-        var H = C.delay === Z ? 0 : C.delay, $ = C.disposal === Z ? 0 : C.disposal;
-        if (0 > $ || $ > 3)
+        var H = C.delay === Z ? 0 : C.delay, q = C.disposal === Z ? 0 : C.disposal;
+        if (0 > q || q > 3)
           throw "Disposal out of range.";
         var z = !1, x = 0;
         if (C.transparent !== Z && C.transparent !== null && (z = !0, x = C.transparent, 0 > x || x >= A0))
           throw "Transparent color index.";
-        if (($ !== 0 || z || H !== 0) && (r[e++] = 33, r[e++] = 249, r[e++] = 4, r[e++] = $ << 2 | (z === !0 ? 1 : 0), r[e++] = 255 & H, r[e++] = H >> 8 & 255, r[e++] = x, r[e++] = 0), r[e++] = 44, r[e++] = 255 & y, r[e++] = y >> 8 & 255, r[e++] = 255 & s, r[e++] = s >> 8 & 255, r[e++] = 255 & g, r[e++] = g >> 8 & 255, r[e++] = 255 & d, r[e++] = d >> 8 & 255, r[e++] = Y === !0 ? 128 | O - 1 : 0, Y === !0)
-          for (var r0 = 0, t0 = D.length; t0 > r0; ++r0) {
-            var a0 = D[r0];
+        if ((q !== 0 || z || H !== 0) && (r[e++] = 33, r[e++] = 249, r[e++] = 4, r[e++] = q << 2 | (z === !0 ? 1 : 0), r[e++] = 255 & H, r[e++] = H >> 8 & 255, r[e++] = x, r[e++] = 0), r[e++] = 44, r[e++] = 255 & y, r[e++] = y >> 8 & 255, r[e++] = 255 & s, r[e++] = s >> 8 & 255, r[e++] = 255 & g, r[e++] = g >> 8 & 255, r[e++] = 255 & d, r[e++] = d >> 8 & 255, r[e++] = Y === !0 ? 128 | O - 1 : 0, Y === !0)
+          for (var $ = 0, t0 = D.length; t0 > $; ++$) {
+            var a0 = D[$];
             r[e++] = a0 >> 16 & 255, r[e++] = a0 >> 8 & 255, r[e++] = 255 & a0;
           }
         e = n(r, e, 2 > O ? 2 : O, T);
@@ -244,7 +244,7 @@ var M0 = { exports: {} };
       }), void 0);
     }
     function j(r) {
-      r = t.isObject(r) ? r : {}, q.stopVideoStreaming(r);
+      r = t.isObject(r) ? r : {}, K.stopVideoStreaming(r);
     }
     function l0(r, a) {
       var A = r.options || {}, i = A.images, f = A.video, n = Number(A.gifWidth), e = Number(A.gifHeight), o = (Number(A.numFrames), r.cameraStream), v = r.videoElement, c = r.videoWidth, X = r.videoHeight, V = R0.getCropDimensions({ videoWidth: c, videoHeight: X, gifHeight: e, gifWidth: n }), y = a;
@@ -263,7 +263,7 @@ var M0 = { exports: {} };
         t.isArray(A) && t.each(A, function(v, c) {
           return e = c instanceof Blob ? c.type.substr(c.type.lastIndexOf("/") + 1, c.length) : c.substr(c.lastIndexOf(".") + 1, c.length), t.isSupported.videoCodecs[e] ? (A = c, !1) : void 0;
         });
-      q.startStreaming({ completed: function(v) {
+      K.startStreaming({ completed: function(v) {
         v.options = i || {}, l0(v, a);
       }, existingVideo: A, crossOrigin: i.crossOrigin, options: i });
     }
@@ -271,12 +271,12 @@ var M0 = { exports: {} };
       var r = arguments.length > 0 && arguments[0] !== Z ? arguments[0] : {}, a = r.callback, A = r.lastCameraStream, i = r.options, f = r.webcamVideoElement;
       return i0() ? i.savedRenderingContexts.length ? (R0.getGIF(i, function(n) {
         a(n);
-      }), void 0) : (q.startVideoStreaming(function() {
+      }), void 0) : (K.startVideoStreaming(function() {
         var n = arguments.length > 0 && arguments[0] !== Z ? arguments[0] : {};
         n.options = i || {}, l0(n, a);
       }, { lastCameraStream: A, callback: a, webcamVideoElement: f, crossOrigin: i.crossOrigin }), void 0) : a(P.validate());
     }
-    function Z0(r, a) {
+    function y0(r, a) {
       if (a = t.isFunction(r) ? r : a, r = t.isObject(r) ? r : {}, t.isFunction(a)) {
         var A = t.mergeOptions(C0, r) || {}, i = r.cameraStream, f = A.images, n = f ? f.length : 0, e = A.video, o = A.webcamVideoElement;
         A = t.mergeOptions(A, { gifWidth: Math.floor(A.gifWidth), gifHeight: Math.floor(A.gifHeight) }), n ? U({ images: f, imagesLength: n, callback: a, options: A }) : e ? V0({ existingVideo: e, callback: a, options: A }) : B0({ lastCameraStream: i, callback: a, webcamVideoElement: o, options: A });
@@ -285,12 +285,12 @@ var M0 = { exports: {} };
     function W0(r, a) {
       if (a = t.isFunction(r) ? r : a, r = t.isObject(r) ? r : {}, t.isFunction(a)) {
         var A = t.mergeOptions(C0, r), i = t.mergeOptions(A, { interval: 0.1, numFrames: 1, gifWidth: Math.floor(A.gifWidth), gifHeight: Math.floor(A.gifHeight) });
-        Z0(i, a);
+        y0(i, a);
       }
     }
     var t = { URL: w.URL || w.webkitURL || w.mozURL || w.msURL, getUserMedia: function() {
-      var r = L.getUserMedia || L.webkitGetUserMedia || L.mozGetUserMedia || L.msGetUserMedia;
-      return r && r.bind(L);
+      var r = r0.getUserMedia || r0.webkitGetUserMedia || r0.mozGetUserMedia || r0.msGetUserMedia;
+      return r && r.bind(r0);
     }(), requestAnimFrame: w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.mozRequestAnimationFrame || w.oRequestAnimationFrame || w.msRequestAnimationFrame, requestTimeout: function(r, a) {
       if (r = r || t.noop, a = a || 0, !t.requestAnimFrame)
         return setTimeout(r, a);
@@ -382,7 +382,7 @@ var M0 = { exports: {} };
       for (n.setAttribute("width", A), n.appendChild(e), e.innerHTML = a, e.style.fontSize = i + "px", e.style.textIndent = "-9999px", e.style.visibility = "hidden", I.body.appendChild(e); e.offsetWidth > A && i >= f; )
         e.style.fontSize = --i + "px";
       return I.body.removeChild(e), i + "px";
-    }, webWorkerError: !1 }, K = Object.freeze({ default: t }), P = { validate: function(r) {
+    }, webWorkerError: !1 }, L = Object.freeze({ default: t }), P = { validate: function(r) {
       r = t.isObject(r) ? r : {};
       var a = {};
       return t.each(P.validators, function(A, i) {
@@ -452,9 +452,9 @@ var M0 = { exports: {} };
       this.repeat = r;
     }, addFrame: function(r, a, A) {
       a = t.isObject(a) ? a : {};
-      var i = this, f = i.ctx, n = i.options, e = n.gifWidth, o = n.gifHeight, v = t.getFontSize(a), c = a, X = c.filter, V = c.fontColor, y = c.fontFamily, s = c.fontWeight, g = (c.gifHeight, c.gifWidth, c.text), d = c.textAlign, T = c.textBaseline, C = c.waterMark, Y = c.waterMarkHeight, D = c.waterMarkWidth, A0 = c.waterMarkXCoordinate, O = c.waterMarkYCoordinate, H = a.textXCoordinate ? a.textXCoordinate : d === "left" ? 1 : d === "right" ? e : e / 2, $ = a.textYCoordinate ? a.textYCoordinate : T === "top" ? 1 : T === "center" ? o / 2 : o, z = s + " " + v + " " + y, x = A && a.showFrameText ? A : g, r0 = void 0;
+      var i = this, f = i.ctx, n = i.options, e = n.gifWidth, o = n.gifHeight, v = t.getFontSize(a), c = a, X = c.filter, V = c.fontColor, y = c.fontFamily, s = c.fontWeight, g = (c.gifHeight, c.gifWidth, c.text), d = c.textAlign, T = c.textBaseline, C = c.waterMark, Y = c.waterMarkHeight, D = c.waterMarkWidth, A0 = c.waterMarkXCoordinate, O = c.waterMarkYCoordinate, H = a.textXCoordinate ? a.textXCoordinate : d === "left" ? 1 : d === "right" ? e : e / 2, q = a.textYCoordinate ? a.textYCoordinate : T === "top" ? 1 : T === "center" ? o / 2 : o, z = s + " " + v + " " + y, x = A && a.showFrameText ? A : g, $ = void 0;
       try {
-        f.filter = X, f.drawImage(r, 0, 0, e, o), x && (f.font = z, f.fillStyle = V, f.textAlign = d, f.textBaseline = T, f.fillText(x, H, $)), C && f.drawImage(C, A0, O, D, Y), r0 = f.getImageData(0, 0, e, o), i.addFrameImageData(r0);
+        f.filter = X, f.drawImage(r, 0, 0, e, o), x && (f.font = z, f.fillStyle = V, f.textAlign = d, f.textBaseline = T, f.fillText(x, H, q)), C && f.drawImage(C, A0, O, D, Y), $ = f.getImageData(0, 0, e, o), i.addFrameImageData($);
       } catch (t0) {
         return "" + t0;
       }
@@ -485,7 +485,7 @@ var M0 = { exports: {} };
     }, R0 = { getGIF: function() {
       var r = arguments.length > 0 && arguments[0] !== Z ? arguments[0] : {}, a = arguments[1];
       a = t.isFunction(a) ? a : T0;
-      var A = I.createElement("canvas"), i = void 0, f = r.images, n = !!f.length, e = r.cameraStream, o = r.crop, v = r.filter, c = r.fontColor, X = r.fontFamily, V = r.fontWeight, y = r.keepCameraOn, s = (r.numWorkers, r.progressCallback), g = r.saveRenderingContexts, d = r.savedRenderingContexts, T = r.text, C = r.textAlign, Y = r.textBaseline, D = r.videoElement, A0 = r.videoHeight, O = r.videoWidth, H = r.webcamVideoElement, $ = r.waterMark, z = r.waterMarkHeight, x = r.waterMarkWidth, r0 = r.waterMarkXCoordinate, t0 = r.waterMarkYCoordinate, a0 = Number(r.gifWidth), o0 = Number(r.gifHeight), c0 = Number(r.interval), s0 = (Number(r.sampleInterval), n ? 0 : 1e3 * c0), h0 = [], f0 = d.length ? d.length : r.numFrames, v0 = f0, p0 = new F0(r), X0 = t.getFontSize(r), G0 = r.textXCoordinate ? r.textXCoordinate : C === "left" ? 1 : C === "right" ? a0 : a0 / 2, I0 = r.textYCoordinate ? r.textYCoordinate : Y === "top" ? 1 : Y === "center" ? o0 / 2 : o0, _0 = V + " " + X0 + " " + X, u0 = o ? Math.floor(o.scaledWidth / 2) : 0, b0 = o ? O - o.scaledWidth : 0, d0 = o ? Math.floor(o.scaledHeight / 2) : 0, k0 = o ? A0 - o.scaledHeight : 0, E0 = function w0() {
+      var A = I.createElement("canvas"), i = void 0, f = r.images, n = !!f.length, e = r.cameraStream, o = r.crop, v = r.filter, c = r.fontColor, X = r.fontFamily, V = r.fontWeight, y = r.keepCameraOn, s = (r.numWorkers, r.progressCallback), g = r.saveRenderingContexts, d = r.savedRenderingContexts, T = r.text, C = r.textAlign, Y = r.textBaseline, D = r.videoElement, A0 = r.videoHeight, O = r.videoWidth, H = r.webcamVideoElement, q = r.waterMark, z = r.waterMarkHeight, x = r.waterMarkWidth, $ = r.waterMarkXCoordinate, t0 = r.waterMarkYCoordinate, a0 = Number(r.gifWidth), o0 = Number(r.gifHeight), c0 = Number(r.interval), s0 = (Number(r.sampleInterval), n ? 0 : 1e3 * c0), h0 = [], f0 = d.length ? d.length : r.numFrames, v0 = f0, Z0 = new F0(r), X0 = t.getFontSize(r), G0 = r.textXCoordinate ? r.textXCoordinate : C === "left" ? 1 : C === "right" ? a0 : a0 / 2, I0 = r.textYCoordinate ? r.textYCoordinate : Y === "top" ? 1 : Y === "center" ? o0 / 2 : o0, _0 = V + " " + X0 + " " + X, u0 = o ? Math.floor(o.scaledWidth / 2) : 0, b0 = o ? O - o.scaledWidth : 0, d0 = o ? Math.floor(o.scaledHeight / 2) : 0, k0 = o ? A0 - o.scaledHeight : 0, p0 = function w0() {
         function h() {
           try {
             b0 > O && (b0 = O), k0 > A0 && (k0 = A0), 0 > u0 && (u0 = 0), 0 > d0 && (d0 = 0), i.filter = v, i.drawImage(D, u0, d0, b0, k0, 0, 0, a0, o0), k();
@@ -497,7 +497,7 @@ var M0 = { exports: {} };
         }
         function k() {
           var b = void 0;
-          g && h0.push(i.getImageData(0, 0, a0, o0)), $ && i.drawImage($, r0, t0, x, z), T && (i.font = _0, i.fillStyle = c, i.textAlign = C, i.textBaseline = Y, i.fillText(T, G0, I0)), b = i.getImageData(0, 0, a0, o0), p0.addFrameImageData(b), v0 = F, s((f0 - v0) / f0), F > 0 && t.requestTimeout(w0, s0), v0 || p0.getBase64GIF(function(m) {
+          g && h0.push(i.getImageData(0, 0, a0, o0)), q && i.drawImage(q, $, t0, x, z), T && (i.font = _0, i.fillStyle = c, i.textAlign = C, i.textBaseline = Y, i.fillText(T, G0, I0)), b = i.getImageData(0, 0, a0, o0), Z0.addFrameImageData(b), v0 = F, s((f0 - v0) / f0), F > 0 && t.requestTimeout(w0, s0), v0 || Z0.getBase64GIF(function(m) {
             a({ error: !1, errorCode: "", errorMsg: "", image: m, cameraStream: e, videoElement: D, webcamVideoElement: H, savedRenderingContexts: h0, keepCameraOn: y });
           });
         }
@@ -505,17 +505,17 @@ var M0 = { exports: {} };
         d.length ? (i.putImageData(d[f0 - v0], 0, 0), k()) : h();
       };
       f0 = f0 !== Z ? f0 : 10, c0 = c0 !== Z ? c0 : 0.1, A.width = a0, A.height = o0, i = A.getContext("2d"), function w0() {
-        return d.length || D.currentTime !== 0 ? (E0(), void 0) : (t.requestTimeout(w0, 100), void 0);
+        return d.length || D.currentTime !== 0 ? (p0(), void 0) : (t.requestTimeout(w0, 100), void 0);
       }();
     }, getCropDimensions: function() {
       var r = arguments.length > 0 && arguments[0] !== Z ? arguments[0] : {}, a = r.videoWidth, A = r.videoHeight, i = r.gifWidth, f = r.gifHeight, n = { width: 0, height: 0, scaledWidth: 0, scaledHeight: 0 };
       return a > A ? (n.width = Math.round(a * (f / A)) - i, n.scaledWidth = Math.round(n.width * (A / f))) : (n.height = Math.round(A * (i / a)) - f, n.scaledHeight = Math.round(n.height * (a / i))), n;
-    } }, q = { loadedData: !1, defaultVideoDimensions: { width: 640, height: 480 }, findVideoSize: function r(a) {
+    } }, K = { loadedData: !1, defaultVideoDimensions: { width: 640, height: 480 }, findVideoSize: function r(a) {
       r.attempts = r.attempts || 0;
       var A = a.cameraStream, i = a.completedCallback, f = a.videoElement;
-      f && (f.videoWidth > 0 && f.videoHeight > 0 ? (f.removeEventListener("loadeddata", q.findVideoSize), i({ videoElement: f, cameraStream: A, videoWidth: f.videoWidth, videoHeight: f.videoHeight })) : r.attempts < 10 ? (r.attempts += 1, t.requestTimeout(function() {
-        q.findVideoSize(a);
-      }, 400)) : i({ videoElement: f, cameraStream: A, videoWidth: q.defaultVideoDimensions.width, videoHeight: q.defaultVideoDimensions.height }));
+      f && (f.videoWidth > 0 && f.videoHeight > 0 ? (f.removeEventListener("loadeddata", K.findVideoSize), i({ videoElement: f, cameraStream: A, videoWidth: f.videoWidth, videoHeight: f.videoHeight })) : r.attempts < 10 ? (r.attempts += 1, t.requestTimeout(function() {
+        K.findVideoSize(a);
+      }, 400)) : i({ videoElement: f, cameraStream: A, videoWidth: K.defaultVideoDimensions.width, videoHeight: K.defaultVideoDimensions.height }));
     }, onStreamingTimeout: function(r) {
       t.isFunction(r) && r({ error: !0, errorCode: "getUserMedia", errorMsg: "There was an issue with the getUserMedia API - Timed out while trying to start streaming", image: null, cameraStream: {} });
     }, stream: function(r) {
@@ -539,20 +539,20 @@ var M0 = { exports: {} };
           n.srcObject = A;
         }
       n.play(), t.requestTimeout(function e() {
-        e.count = e.count || 0, q.loadedData === !0 ? (q.findVideoSize({ videoElement: n, cameraStream: A, completedCallback: i }), q.loadedData = !1) : (e.count += 1, e.count > 10 ? q.findVideoSize({ videoElement: n, cameraStream: A, completedCallback: i }) : e());
+        e.count = e.count || 0, K.loadedData === !0 ? (K.findVideoSize({ videoElement: n, cameraStream: A, completedCallback: i }), K.loadedData = !1) : (e.count += 1, e.count > 10 ? K.findVideoSize({ videoElement: n, cameraStream: A, completedCallback: i }) : e());
       }, 0);
     }, startStreaming: function(r) {
       var a = t.isFunction(r.error) ? r.error : t.noop, A = t.isFunction(r.streamed) ? r.streamed : t.noop, i = t.isFunction(r.completed) ? r.completed : t.noop, f = r.crossOrigin, n = r.existingVideo, e = r.lastCameraStream, o = r.options, v = r.webcamVideoElement, c = t.isElement(n) ? n : v || I.createElement("video");
       f && (c.crossOrigin = o.crossOrigin), c.autoplay = !0, c.loop = !0, c.muted = !0, c.addEventListener("loadeddata", function() {
-        q.loadedData = !0, o.offset && (c.currentTime = o.offset);
-      }), n ? q.stream({ videoElement: c, existingVideo: n, completedCallback: i }) : e ? q.stream({ videoElement: c, cameraStream: e, streamedCallback: A, completedCallback: i }) : t.getUserMedia({ video: !0 }, function(X) {
-        q.stream({ videoElement: c, cameraStream: X, streamedCallback: A, completedCallback: i });
+        K.loadedData = !0, o.offset && (c.currentTime = o.offset);
+      }), n ? K.stream({ videoElement: c, existingVideo: n, completedCallback: i }) : e ? K.stream({ videoElement: c, cameraStream: e, streamedCallback: A, completedCallback: i }) : t.getUserMedia({ video: !0 }, function(X) {
+        K.stream({ videoElement: c, cameraStream: X, streamedCallback: A, completedCallback: i });
       }, a);
     }, startVideoStreaming: function(r) {
       var a = arguments.length > 1 && arguments[1] !== Z ? arguments[1] : {}, A = a.timeout !== Z ? a.timeout : 0, i = a.callback, f = a.webcamVideoElement, n = void 0;
       A > 0 && (n = t.requestTimeout(function() {
-        q.onStreamingTimeout(i);
-      }, 1e4)), q.startStreaming({ error: function() {
+        K.onStreamingTimeout(i);
+      }, 1e4)), K.startStreaming({ error: function() {
         i({ error: !0, errorCode: "getUserMedia", errorMsg: "There was an issue with the getUserMedia API - the user probably denied permission", image: null, cameraStream: {} });
       }, streamed: function() {
         clearTimeout(n);
@@ -564,7 +564,7 @@ var M0 = { exports: {} };
       r = t.isObject(r) ? r : {};
       var a = r, A = a.keepCameraOn, i = a.videoElement, f = a.webcamVideoElement, n = r.cameraStream || {}, e = n.getTracks ? n.getTracks() || [] : [], o = !!e.length, v = e[0];
       !A && o && t.isFunction(v.stop) && v.stop(), t.isElement(i) && !f && (i.pause(), t.isFunction(t.URL.revokeObjectURL) && !t.webWorkerError && i.src && t.URL.revokeObjectURL(i.src), t.removeElement(i));
-    } }, U0 = { utils: K, error: J0, defaultOptions: j0, createGIF: Z0, takeSnapShot: W0, stopVideoStreaming: j, isSupported: m0, isWebCamGIFSupported: i0, isExistingVideoGIFSupported: R, isExistingImagesGIFSupported: E, VERSION: "0.4.5" };
+    } }, U0 = { utils: L, error: J0, defaultOptions: j0, createGIF: y0, takeSnapShot: W0, stopVideoStreaming: j, isSupported: m0, isWebCamGIFSupported: i0, isExistingVideoGIFSupported: R, isExistingImagesGIFSupported: p, VERSION: "0.4.5" };
     M.exports = U0;
   })(typeof window < "u" ? window : {}, typeof document < "u" ? document : { createElement: function() {
   } }, typeof window < "u" ? window.navigator : {}), function(w, I) {
@@ -637,20 +637,20 @@ onmessage = (message) => {
 
 `, I = new Blob([w], { type: "application/javascript" });
     window.__heic2any__worker = new Worker(URL.createObjectURL(I));
-    var L = ["image/png", "image/jpeg", "image/gif"], Z = {
-      blobToDataURL: function(E) {
+    var r0 = ["image/png", "image/jpeg", "image/gif"], Z = {
+      blobToDataURL: function(p) {
         return new Promise(function(R, W) {
           var B = new FileReader();
           B.onerror = function() {
             W("ERR_DOM Error on converting blob to data URL");
           }, B.onload = function(_) {
             R(B.result);
-          }, B.readAsDataURL(E);
+          }, B.readAsDataURL(p);
         });
       },
-      dataURItoBlob: function(E) {
+      dataURItoBlob: function(p) {
         try {
-          for (var R = atob(E.split(",")[1]), W = E.split(",")[0].split(":")[1].split(";")[0], B = new ArrayBuffer(R.length), _ = new Uint8Array(B), N = 0; N < R.length; N++)
+          for (var R = atob(p.split(",")[1]), W = p.split(",")[0].split(":")[1].split(";")[0], B = new ArrayBuffer(R.length), _ = new Uint8Array(B), N = 0; N < R.length; N++)
             _[N] = R.charCodeAt(N);
           var U = new Blob([B], { type: W });
           return U;
@@ -658,11 +658,11 @@ onmessage = (message) => {
           return "ERR_DOM Error on converting data URI to blob " + j && j.toString ? j.toString() : j;
         }
       },
-      imageDataToBlob: function(E) {
-        var R = E.imageData, W = E.toType;
+      imageDataToBlob: function(p) {
+        var R = p.imageData, W = p.toType;
         W === void 0 && (W = "image/png");
-        var B = E.quality;
-        return B === void 0 && (B = 0.92), (B > 1 || B < 0) && (B = 0.92), L.indexOf(W) === -1 && (W = "image/png"), new Promise(function(_, N) {
+        var B = p.quality;
+        return B === void 0 && (B = 0.92), (B > 1 || B < 0) && (B = 0.92), r0.indexOf(W) === -1 && (W = "image/png"), new Promise(function(_, N) {
           var U = null;
           try {
             U = document.createElement("canvas");
@@ -679,8 +679,8 @@ onmessage = (message) => {
           }, W, B);
         });
       },
-      imagesToGif: function(E) {
-        var R = E.images, W = E.interval, B = E.gifHeight, _ = E.gifWidth;
+      imagesToGif: function(p) {
+        var R = p.images, W = p.interval, B = p.gifHeight, _ = p.gifWidth;
         return new Promise(function(N, U) {
           gifshot.createGIF({
             images: R,
@@ -692,8 +692,8 @@ onmessage = (message) => {
           });
         });
       },
-      otherImageType: function(E) {
-        for (var R = new Uint8Array(E).subarray(0, 4), W = "", B = 0; B < R.length; B++)
+      otherImageType: function(p) {
+        for (var R = new Uint8Array(p).subarray(0, 4), W = "", B = 0; B < R.length; B++)
           W = W + R[B].toString(16);
         switch (W) {
           case "89504e47":
@@ -710,9 +710,9 @@ onmessage = (message) => {
             return !1;
         }
       },
-      error: function(E) {
+      error: function(p) {
         var R = 0;
-        E ? typeof E != "string" && (E.toString ? E = E.toString() : E = JSON.stringify(E)) : E = "ERR_UNKNOWN";
+        p ? typeof p != "string" && (p.toString ? p = p.toString() : p = JSON.stringify(p)) : p = "ERR_UNKNOWN";
         for (var W = [
           "ERR_USER",
           "ERR_LIBHEIF",
@@ -721,64 +721,64 @@ onmessage = (message) => {
           "ERR_CANVAS"
         ], B = 0; B < W.length; B++) {
           var _ = W[B];
-          E.indexOf(_) === 0 && (R = B + 1);
+          p.indexOf(_) === 0 && (R = B + 1);
         }
         return {
           code: R,
-          message: E
+          message: p
         };
       }
     };
-    function m0(E) {
+    function m0(p) {
       return new Promise(function(R, W) {
-        var B = (Math.random() * (/* @__PURE__ */ new Date()).getTime()).toString(), _ = { id: B, buffer: E };
+        var B = (Math.random() * (/* @__PURE__ */ new Date()).getTime()).toString(), _ = { id: B, buffer: p };
         window.__heic2any__worker.postMessage(_), window.__heic2any__worker.addEventListener("message", function(N) {
           if (N.data.id === B)
             return N.data.error ? W(N.data.error) : R(N.data.imageDataArr);
         });
       });
     }
-    function i0(E) {
-      var R = E.blob, W = E.toType;
+    function i0(p) {
+      var R = p.blob, W = p.toType;
       W === void 0 && (W = "image/png");
-      var B = E.quality;
+      var B = p.quality;
       B === void 0 && (B = 0.92);
-      var _ = E.gifInterval;
+      var _ = p.gifInterval;
       _ === void 0 && (_ = 0.4);
-      var N = E.multiple;
+      var N = p.multiple;
       return N === void 0 && (N = void 0), new Promise(function(U, j) {
         R instanceof Blob || Z.error("ERR_USER library only accepts BLOBs as input"), typeof N != "boolean" && Z.error('ERR_USER "multiple" parameter should be of type "boolean"'), typeof B != "number" && Z.error('ERR_USER "quality" parameter should be of type "number"'), typeof _ != "number" && Z.error('ERR_USER "gifInterval" parameter should be of type "number"');
         var l0 = new FileReader();
         l0.onload = function(V0) {
-          var B0 = 0, Z0 = 0, W0 = V0.target.result, t = Z.otherImageType(W0);
+          var B0 = 0, y0 = 0, W0 = V0.target.result, t = Z.otherImageType(W0);
           if (t)
             return j(Z.error("ERR_USER Image is already browser readable: " + t));
-          m0(W0).then(function(K) {
-            return B0 = K[0].width, Z0 = K[0].height, Promise.all(K.map(function(P) {
+          m0(W0).then(function(L) {
+            return B0 = L[0].width, y0 = L[0].height, Promise.all(L.map(function(P) {
               return Z.imageDataToBlob({
                 imageData: P,
                 toType: W,
                 quality: B
               });
             }));
-          }).then(function(K) {
-            return W === "image/gif" ? Promise.all(K.map(function(P) {
+          }).then(function(L) {
+            return W === "image/gif" ? Promise.all(L.map(function(P) {
               return Z.blobToDataURL(P);
-            })) : N ? (U(K), [""]) : (U(K[0]), [""]);
-          }).then(function(K) {
-            return W === "image/gif" && K ? Z.imagesToGif({
-              images: K,
+            })) : N ? (U(L), [""]) : (U(L[0]), [""]);
+          }).then(function(L) {
+            return W === "image/gif" && L ? Z.imagesToGif({
+              images: L,
               interval: _,
               gifWidth: B0,
-              gifHeight: Z0
+              gifHeight: y0
             }) : "";
-          }).then(function(K) {
-            if (W === "image/gif" && K) {
-              var P = Z.dataURItoBlob(K);
+          }).then(function(L) {
+            if (W === "image/gif" && L) {
+              var P = Z.dataURItoBlob(L);
               typeof P == "string" ? j(Z.error(P)) : U(P);
             }
-          }).catch(function(K) {
-            j(Z.error(K));
+          }).catch(function(L) {
+            j(Z.error(L));
           });
         }, l0.readAsArrayBuffer(R);
       });
@@ -788,47 +788,47 @@ onmessage = (message) => {
 })(M0);
 var z0 = M0.exports;
 const O0 = /* @__PURE__ */ P0(z0);
-var y0 = /* @__PURE__ */ ((M) => (M.jpg = "image/jpeg", M.jpeg = "image/jpeg", M.png = "image/png", M.heic = "image/heic", M.heif = "image/heif", M.webp = "image/webp", M))(y0 || {});
+var E0 = /* @__PURE__ */ ((M) => (M.jpg = "image/jpeg", M.jpeg = "image/jpeg", M.png = "image/png", M.heic = "image/heic", M.heif = "image/heif", M.webp = "image/webp", M))(E0 || {});
 class q0 {
-  constructor(p, w) {
+  constructor(E, w) {
     g0(this, "options");
     g0(this, "file");
     g0(this, "image");
     g0(this, "imageInfo");
     g0(this, "canvas");
     g0(this, "canvasContext");
-    this.options = { ...L0, ...w }, this.file = p, this.image = null, this.imageInfo = { width: 0, height: 0 }, this.canvas = null, this.canvasContext = null;
+    this.options = { ...L0, ...w }, this.file = E, this.image = null, this.imageInfo = { width: 0, height: 0 }, this.canvas = null, this.canvasContext = null;
   }
   static getSupportedTypes() {
-    return y0;
+    return E0;
   }
   init() {
-    return new Promise((p, w) => {
+    return new Promise((E, w) => {
       this.loadImage(this.file).then(() => {
         this.image ? (this.imageInfo = {
           width: this.image.width,
           height: this.image.height
-        }, this.createCanvas(), p(this)) : w(new Error("The image is null"));
+        }, this.createCanvas(), E(this)) : w(new Error("The image is null"));
       }).catch((I) => {
         w(I);
       });
     });
   }
-  loadImage(p) {
+  loadImage(E) {
     return new Promise(async (w, I) => {
       var Z, m0;
-      if (!p) {
+      if (!E) {
         I(new Error("No file is provided."));
         return;
       }
-      let L = p.type;
-      if (!L && p instanceof File) {
-        const i0 = (Z = p.name.split(".").pop()) == null ? void 0 : Z.toLocaleLowerCase();
-        (i0 === "heic" || i0 === "heif") && (L = y0[i0]);
+      let r0 = E.type;
+      if (!r0 && E instanceof File) {
+        const i0 = (Z = E.name.split(".").pop()) == null ? void 0 : Z.toLocaleLowerCase();
+        (i0 === "heic" || i0 === "heif") && (r0 = E0[i0]);
       }
-      console.log("ImageTypes", Object.entries(y0)), console.log("Input Type", p, L), (m0 = Object.entries(y0).map((i0) => i0[1])) != null && m0.includes(L) || I(new Error(`The input is not a valid bitmap. Supported file types: ${Object.keys(y0).join(", ")}`));
+      (m0 = Object.entries(E0).map((i0) => i0[1])) != null && m0.includes(r0) || I(new Error(`The input is not a valid bitmap. Supported file types: ${Object.keys(E0).join(", ")}`));
       try {
-        new Promise((E, R) => {
+        new Promise((p, R) => {
           const W = (_) => {
             const N = new FileReader();
             N.readAsDataURL(_), N.onload = (U) => {
@@ -836,15 +836,15 @@ class q0 {
               (j = U.target) != null && j.result ? B(U.target.result) : R(new Error("Failed to read the image."));
             }, N.onerror = (U) => R(U);
           }, B = (_) => {
-            this.image = document.createElement("img"), this.image.src = _, this.image.onload = () => E(_);
+            this.image = document.createElement("img"), this.image.src = _, this.image.onload = () => p(_);
           };
-          L === "image/heic" || L === "image/heif" ? O0({
-            blob: p,
+          r0 === "image/heic" || r0 === "image/heif" ? O0({
+            blob: E,
             toType: "image/png"
-          }).then((_) => W(_)).catch((_) => R(_)) : W(p);
-        }).then((E) => {
-          w(E);
-        }).catch((E) => I(E));
+          }).then((_) => W(_)).catch((_) => R(_)) : W(E);
+        }).then((p) => {
+          w(p);
+        }).catch((p) => I(p));
       } catch (i0) {
         I(i0);
       }
@@ -856,23 +856,23 @@ class q0 {
   renderImage() {
     this.canvasContext && this.image && (this.canvas && this.options.outputType !== "image/png" && (this.canvasContext.fillStyle = this.options.backgroundColor, this.canvasContext.fillRect(0, 0, this.canvas.width, this.canvas.height)), this.canvasContext.drawImage(this.image, 0, 0, this.imageInfo.width, this.imageInfo.height));
   }
-  scale(p = 1) {
+  scale(E = 1) {
     this.imageInfo = {
       ...this.imageInfo,
-      width: this.imageInfo.width * p,
-      height: this.imageInfo.height * p
+      width: this.imageInfo.width * E,
+      height: this.imageInfo.height * E
     }, this.resize(this.imageInfo.width, this.imageInfo.height);
   }
-  setMaxSize(p, w) {
-    w || (w = p);
+  setMaxSize(E, w) {
+    w || (w = E);
     const I = () => {
-      const Z = p / this.imageInfo.width;
+      const Z = E / this.imageInfo.width;
       this.imageInfo = {
         ...this.imageInfo,
-        width: p,
+        width: E,
         height: this.imageInfo.height * Z
       };
-    }, L = () => {
+    }, r0 = () => {
       const Z = w / this.imageInfo.height;
       this.imageInfo = {
         ...this.imageInfo,
@@ -880,34 +880,34 @@ class q0 {
         height: w
       };
     };
-    this.imageInfo.width >= this.imageInfo.height ? (this.imageInfo.width > p && I(), this.imageInfo.height > w && L()) : (this.imageInfo.height > w && L(), this.imageInfo.width > p && I()), this.resize(this.imageInfo.width, this.imageInfo.height);
+    this.imageInfo.width >= this.imageInfo.height ? (this.imageInfo.width > E && I(), this.imageInfo.height > w && r0()) : (this.imageInfo.height > w && r0(), this.imageInfo.width > E && I()), this.resize(this.imageInfo.width, this.imageInfo.height);
   }
-  resize(p, w) {
-    w || (w = p), this.resizeX(p), this.resizeY(w);
+  resize(E, w) {
+    w || (w = E), this.resizeX(E), this.resizeY(w);
   }
-  resizeX(p = Q0.width) {
+  resizeX(E = Q0.width) {
     this.imageInfo = {
       ...this.imageInfo,
-      width: p
-    }, this.canvas && (this.canvas.width = p);
+      width: E
+    }, this.canvas && (this.canvas.width = E);
   }
-  resizeY(p = Q0.height) {
+  resizeY(E = Q0.height) {
     this.imageInfo = {
       ...this.imageInfo,
-      height: p
-    }, this.canvas && (this.canvas.height = p);
+      height: E
+    }, this.canvas && (this.canvas.height = E);
   }
   toDataURL() {
     if (this.renderImage(), !!this.canvas)
       return this.canvas.toDataURL(this.options.outputType, this.options.quality);
   }
   toBlob() {
-    return new Promise((p) => {
+    return new Promise((E) => {
       const w = (I) => {
-        p(I || void 0);
+        E(I || void 0);
       };
       if (this.renderImage(), !this.canvas) {
-        p(void 0);
+        E(void 0);
         return;
       }
       this.canvas.toBlob(w, this.options.outputType, this.options.quality);

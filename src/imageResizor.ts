@@ -128,9 +128,6 @@ class ImageResizor {
         }
       }
 
-      console.log('ImageTypes', Object.entries(ImageType));
-      console.log('Input Type', file, fileType);
-
       if (!Object.entries(ImageType)
         .map(entry => entry[1])
         ?.includes(fileType as ImageType)) {
