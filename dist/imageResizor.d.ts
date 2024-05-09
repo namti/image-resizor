@@ -23,16 +23,6 @@ export type TBaseOptions = {
      * @default `1`
      */
     scale: number;
-    /**
-     * Quality
-     */
-    quality: number;
-    /**
-     * Background color for non-alpha outputs
-     * @default `#ffffff`
-     */
-    backgroundColor: string;
-    outputType: 'image/jpeg' | 'image/png';
 };
 export type TJpegOptions = TBaseOptions & {
     /**
@@ -44,6 +34,11 @@ export type TJpegOptions = TBaseOptions & {
      * @default `1`
      */
     quality: number;
+    /**
+     * Background color for non-alpha outputs
+     * @default `#ffffff`
+     */
+    backgroundColor: string;
 };
 export type TOtherFormatOptions = TBaseOptions & {
     outputType: 'image/png';
