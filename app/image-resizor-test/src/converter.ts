@@ -6,16 +6,18 @@ type InputEvent = Event & { target: HTMLInputElement };
 type InputFocusEvent = FocusEvent & { target: HTMLInputElement };
 type SelectEvent = Event & { target: HTMLSelectElement };
 
+const defaultOptions: TOptions = {
+  maxWidth: 2000,
+  maxHeight: 2000,
+  scale: .5,
+  quality: .5,
+  backgroundColor: '#ffffff',
+  outputType: 'image/jpeg',
+};
+
 export function setupConverter() {
 
-  const options: TOptions = {
-    maxWidth: 2000,
-    maxHeight: 2000,
-    scale: .5,
-    quality: .5,
-    backgroundColor: '#ffffff',
-    outputType: 'image/jpeg',
-  };
+  let options: TOptions = { ...defaultOptions };
 
   const handleTypeChange = (e: SelectEvent) => {
     const value = e.target.value;
@@ -55,12 +57,15 @@ export function setupConverter() {
   };
 
   const handleConvert = () => {
+
     console.log('options', options);
 
     if(!elImageFile.files?.length) {
       alert('No file is selected');
       return;
     }
+
+    setConverting(true);
 
     const file = elImageFile.files[0];
 
@@ -90,7 +95,23 @@ export function setupConverter() {
       .catch((e: Error) => {
         alert('Failed to convert. ' + e.message);
         console.error('failed', e);
+      })
+      .finally(() => {
+        setConverting(false);
       });
+  };
+
+  const handleReset = () => {
+    elImageFile.value = '';
+    resetConvertedResult();
+
+    options = { ...defaultOptions };
+    syncOptions();
+  };
+
+  const resetConvertedResult = () => {
+    elConvertedImage.removeAttribute('src');
+    elConvertedImage.style.display = 'none';
   };
 
   const elConvertedImage: HTMLImageElement = document.querySelector('#img-preview')!;
@@ -103,7 +124,9 @@ export function setupConverter() {
   const elOptionMaxHeight: HTMLInputElement = document.querySelector('#option-max-height')!;
   const elOptionBackgroundColor: HTMLInputElement = document.querySelector('#option-background-color')!;
   const elBtnConvert: HTMLButtonElement = document.querySelector('#btn-convert')!;
+  const elBtnReset: HTMLButtonElement = document.querySelector('#btn-reset')!;
 
+  elImageFile.addEventListener('change', () => resetConvertedResult());
   elOptionType.addEventListener('change', e => handleTypeChange(e as SelectEvent));
   elOptionQuality.addEventListener('change', e => handleQualityChange(e as InputEvent));
   elOptionMaxWidth.addEventListener('blur', e => handleMaxWidthChange(e as InputFocusEvent));
@@ -111,6 +134,7 @@ export function setupConverter() {
   elOptionBackgroundColor.addEventListener('change', e => handleBackgroundColorChange(e as InputEvent));
 
   elBtnConvert.addEventListener('click', () => handleConvert());
+  elBtnReset.addEventListener('click', () => handleReset());
 
   const syncOptions = () => {
     const typeIndex = Array.from(elOptionType.options)
@@ -122,6 +146,18 @@ export function setupConverter() {
     elOptionMaxWidth.value = options.maxWidth.toString();
     elOptionMaxHeight.value = options.maxHeight.toString();
     elValueQuality.innerText = options.quality.toString();
+  };
+
+  const setConverting = (isConverting: boolean) => {
+    if(isConverting){
+      elBtnConvert.innerHTML = `<div class="spinner-border spinner-border-sm"></div>`;
+      elBtnConvert.disabled = true;
+      elBtnReset.disabled = true;
+    }else{
+      elBtnConvert.innerHTML = 'Convert';
+      elBtnConvert.disabled = false;
+      elBtnReset.disabled = false;
+    }
   };
 
   syncOptions();

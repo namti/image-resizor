@@ -799,6 +799,9 @@ class q0 {
     g0(this, "canvasContext");
     this.options = { ...L0, ...w }, this.file = E, this.image = null, this.imageInfo = { width: 0, height: 0 }, this.canvas = null, this.canvasContext = null;
   }
+  /**
+  * Gets supported types.
+  */
   static getSupportedTypes() {
     return E0;
   }
@@ -897,10 +900,17 @@ class q0 {
       height: E
     }, this.canvas && (this.canvas.height = E);
   }
+  /**
+  * Converts the image into a data URL.
+  */
   toDataURL() {
     if (this.renderImage(), !!this.canvas)
       return this.canvas.toDataURL(this.options.outputType, this.options.quality);
   }
+  /**
+  * Converts the image into a Blob.
+  * @returns
+  */
   toBlob() {
     return new Promise((E) => {
       const w = (I) => {

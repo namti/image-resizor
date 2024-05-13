@@ -1,11 +1,9 @@
 # image-resizor
 
-This package supports resizing and converting images in browsers.
-
-Supported formats: `jpg`, `jpeg`, `png`, `heic`, `heif` , `webp`
+Effortlessly convert, resize, and compress images (jpg, png, heic, heif, webp) into optimized png and jpg formats, all within the browser environment.
 
 
-## How to use
+## Usage
 
 ```typescript
 import ImageResizor from 'image-resizor';
@@ -26,40 +24,59 @@ new ImageResizor(file, {
 
 ## Arguments
 
-`new ImageResizor(file[, { ...options }])`
+```typescript
+new ImageResizor(file[, { ...options }])
+```
+
+### file
+
+```typescript
+File | Blob
+```
 
 
-
-### Options:
+### options
 
 | Key | Type | Default | Options |
 | --- | --- | --- | --- |
-| maxWidth | `number` | 2200 | |
-| maxHeight | `number` | 2200 | |
-| scale | `number` | 1 | 0 - 1 |
-| outputType | `string` | `image/png` | `image/png` `image/jpeg` |
-| backgroundColor | `string` | `#ffffff` | Background fill for converting alpha images to `image/jpeg` |
-| quality | `number` | 1 | 0 - 1 <br/>availabe if the `outputType` is `image/jpeg` |
+| maxWidth | number | 2000 | |
+| maxHeight | number | 2000 | |
+| scale | number | 1 | 0.1~1 |
+| outputType | string | image/png | "image/png" \| "image/jpeg" |
+| backgroundColor | string | #ffffff | Background fill for converting images with alpha channel to "image/jpeg" |
+| quality | number | 1 | 0.1~1 Available if the `outputType` is "image/jpeg" |
 
 
 
-## API
+## Methods
 
-### Instance
+### toDataURL()
+Converts the image into a data URL.
 
-`toDataURL()` returns the base64 code.
+```typescript
+instance.toDataURL(): string | undefined
+```
 
-`toBlob()` returns a `Blob` promise.
+### toBlob()
+Converts the image into a Blob.
 
+```typescript
+instance.toBlob(): Promise<Blob>
+```
 
-**After `init()` , you can call functions below to modify the options.**
+### getSupportedTypes()
 
-`setMaxSize(maxWidthAndHeight|maxWidth[, maxHeight])`
-
-`resize(widthAndHeight|width[, height])`
-
-`scale(value)`
-
+```typescript
+enum ImageType {
+  jpg = 'image/jpeg',
+  jpeg = 'image/jpeg',
+  png = 'image/png',
+  heic = 'image/heic',
+  heif = 'image/heif',
+  webp = 'image/webp',
+}
+static ImageResizor.getSupportedTypes(): typeof ImageType 
+```
 
 ### Static Methods
 

@@ -1,59 +1,60 @@
 import heic2any from 'heic2any';
 
 export enum ImageType {
-    jpg = 'image/jpeg',
-    // eslint-disable-next-line @typescript-eslint/no-duplicate-enum-values
-    jpeg = 'image/jpeg',
-    png = 'image/png',
-    heic = 'image/heic',
-    heif = 'image/heif',
-    webp = 'image/webp',
+	jpg = 'image/jpeg',
+	// eslint-disable-next-line @typescript-eslint/no-duplicate-enum-values
+	jpeg = 'image/jpeg',
+	png = 'image/png',
+	heic = 'image/heic',
+	heif = 'image/heif',
+	webp = 'image/webp',
 }
 
 export type OutputImageType = 'image/jpeg' | 'image/png';
 
 export type TBaseOptions = {
-    /**
-     * Max width of the output image
-     * @default `2000`
-     */
-    maxWidth: number,
-    /**
-     * Max height of the output image
-     * @default `2000`
-     */
-    maxHeight: number,
-    /**
-     * Scale of the output image. `0.1` - `1`
-     * @default `1`
-     */
-    scale: number,
-    /**
-     * Quality
-     */
-    quality: number,
-		/**
-		 * Background color for non-alpha outputs
-		 * @default `#ffffff`
-		 */
-		backgroundColor: string,
-    outputType: 'image/jpeg' | 'image/png',
+	/**
+	 * Max width of the output image
+	 * @default 2000
+	 */
+	maxWidth: number,
+	/**
+	 * Max height of the output image
+	 * @default 2000
+	 */
+	maxHeight: number,
+	/**
+	 * Scale of the output image. `0.1` - `1`
+	 * @default 1
+	 */
+	scale: number,
+	/**
+	 * Quality `0.1` - `1`
+	 * @default 1
+	 */
+	quality: number,
+	/**
+	 * Background color for non-alpha outputs
+	 * @default #ffffff
+	 */
+	backgroundColor: string,
+	outputType: 'image/jpeg' | 'image/png',
 };
 
 export type TJpegOptions = TBaseOptions & {
-    /**
-     * Output type
-     */
-    outputType: 'image/jpeg';
-    /**
-     * JPEG quality. `0.1` - `1`
-     * @default `1`
-     */
-    quality: number;
+	/**
+	 * Output type
+	 */
+	outputType: 'image/jpeg';
+	/**
+	 * JPEG quality. `0.1` - `1`
+	 * @default `1`
+	 */
+	quality: number;
 };
 
 export type TOtherFormatOptions = TBaseOptions & {
-   outputType: 'image/png';
+	outputType: 'image/png';
 };
 
 export type TOptions = TJpegOptions | TOtherFormatOptions;
@@ -65,9 +66,9 @@ class ImageResizor {
   file: Blob | File;
   image: HTMLImageElement | null;
   imageInfo: {
-        width: number,
-        height: number,
-    };
+		width: number,
+		height: number,
+	};
   canvas: HTMLCanvasElement | null;
   canvasContext: CanvasRenderingContext2D | null;
 
@@ -80,7 +81,10 @@ class ImageResizor {
     this.canvasContext = null;
   }
 
-  static getSupportedTypes() {
+  /**
+	 * Gets supported types.
+	 */
+  static getSupportedTypes(): typeof ImageType {
     return ImageType;
   }
 
@@ -111,19 +115,19 @@ class ImageResizor {
 
   private loadImage(file: Blob): Promise<string> {
     return new Promise(async (resolve, reject) => {
-      if(!file){
+      if (!file) {
         reject(new Error('No file is provided.'));
         return;
       }
 
       let fileType = file.type;
 
-      if(!fileType && file instanceof File){
+      if (!fileType && file instanceof File) {
         const fileExtension = file.name.split('.')
           .pop()
           ?.toLocaleLowerCase();
 
-        if(fileExtension === 'heic' || fileExtension === 'heif'){
+        if (fileExtension === 'heic' || fileExtension === 'heif') {
           fileType = ImageType[fileExtension];
         }
       }
@@ -144,9 +148,9 @@ class ImageResizor {
             reader.readAsDataURL(blob);
 
             reader.onload = e => {
-              if(e.target?.result){
+              if (e.target?.result) {
                 resolveReader(e.target.result as string);
-              }else{
+              } else {
                 reject(new Error('Failed to read the image.'));
               }
             };
@@ -195,12 +199,12 @@ class ImageResizor {
   }
 
   private renderImage() {
-    if(this.canvasContext && this.image){
+    if (this.canvasContext && this.image) {
 
-      if(
+      if (
         this.canvas &&
 				this.options.outputType !== 'image/png'
-      ){
+      ) {
         this.canvasContext.fillStyle = this.options.backgroundColor;
         this.canvasContext.fillRect(0, 0, this.canvas.width, this.canvas.height);
       }
@@ -220,7 +224,7 @@ class ImageResizor {
   }
 
   setMaxSize(maxWidth: number, maxHeight?: number) {
-    if(!maxHeight){
+    if (!maxHeight) {
       maxHeight = maxWidth;
     }
 
@@ -268,49 +272,56 @@ class ImageResizor {
   }
 
   resize(width: number, height?: number) {
-    if(!height) height = width;
+    if (!height) height = width;
 
     this.resizeX(width);
     this.resizeY(height);
   }
 
-  resizeX(width: number = defaultCanvas.width) {
+  private resizeX(width: number = defaultCanvas.width) {
     this.imageInfo = {
       ...this.imageInfo,
       width: width,
     };
 
-    if(this.canvas) this.canvas.width = width;
+    if (this.canvas) this.canvas.width = width;
   }
 
-  resizeY(height = defaultCanvas.height) {
+  private resizeY(height = defaultCanvas.height) {
     this.imageInfo = {
       ...this.imageInfo,
       height: height,
     };
 
-    if(this.canvas) this.canvas.height = height;
+    if (this.canvas) this.canvas.height = height;
   }
 
+  /**
+	 * Converts the image into a data URL.
+	 */
   toDataURL(): string | undefined {
     this.renderImage();
 
-    if(!this.canvas) return;
+    if (!this.canvas) return;
 
     return this.canvas.toDataURL(this.options.outputType, this.options.quality);
 
   }
 
+  /**
+	 * Converts the image into a Blob.
+	 * @returns
+	 */
   toBlob(): Promise<Blob | undefined> {
     return new Promise(resolve => {
       const setBlob = (blob: Blob | null) => {
-        if(blob) resolve(blob);
+        if (blob) resolve(blob);
         else resolve(undefined);
       };
 
       this.renderImage();
 
-      if(!this.canvas) {
+      if (!this.canvas) {
         resolve(undefined);
         return;
       }
