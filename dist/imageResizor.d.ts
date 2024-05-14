@@ -42,7 +42,7 @@ export type JpegOptions = BaseOptions & {
     outputType: 'image/jpeg';
     /**
      * JPEG quality. `0.1` - `1`
-     * @default `1`
+     * @default `0.9`
      */
     quality: number;
 };

@@ -48,7 +48,7 @@ export type JpegOptions = BaseOptions & {
 	outputType: 'image/jpeg';
 	/**
 	 * JPEG quality. `0.1` - `1`
-	 * @default `1`
+	 * @default `0.9`
 	 */
 	quality: number;
 };
@@ -340,7 +340,7 @@ const defaultOptions: Options = {
   maxWidth: 2000,
   maxHeight: 2000,
   scale: 1,
-  quality: 1,
+  quality: 0.9,
   backgroundColor: '#ffffff',
   outputType: 'image/jpeg',
 };

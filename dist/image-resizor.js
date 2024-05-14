@@ -931,7 +931,7 @@ const Q0 = {
   maxWidth: 2e3,
   maxHeight: 2e3,
   scale: 1,
-  quality: 1,
+  quality: 0.9,
   backgroundColor: "#ffffff",
   outputType: "image/jpeg"
 };

@@ -44,7 +44,7 @@ File | Blob
 | scale | number | 1 | 0.1~1 |
 | outputType | string | image/png | "image/png" \| "image/jpeg" |
 | backgroundColor | string | #ffffff | Background fill for converting images with alpha channel to "image/jpeg" |
-| quality | number | 1 | 0.1~1 Available if the `outputType` is "image/jpeg" |
+| quality | number | 0.9 | 0.1~1 Available if the `outputType` is "image/jpeg" |
 
 
 
