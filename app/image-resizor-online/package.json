@@ -1,12 +1,13 @@
 {
-  "name": "image-resizor-test",
+  "name": "image-resizor-online",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "publish": "npm run build && touch ./dist/.nojekyll && gh-pages -d ./dist -t true"
   },
   "devDependencies": {
     "typescript": "^5.2.2",

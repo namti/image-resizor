@@ -2,11 +2,18 @@
 
 Effortlessly convert, resize, and compress images (jpg, png, heic, heif, webp) into optimized png and jpg formats, all within the browser environment.
 
+## Demo
+
+[https://namti.github.io/image-resizor](https://namti.github.io/image-resizor)
+
 
 ## Usage
 
 ```typescript
 import ImageResizor from 'image-resizor';
+```
+```html
+<script src="https://cdn.jsdelivr.net/npm/image-resizor/dist/image-resizor.iife.js"></script>
 ```
 
 ```typescript

@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import ImageResizor from 'image-resizor';
-import { TOptions } from '../../../dist/imageResizor';
+import { Options } from '../../../dist/imageResizor';
 
 type InputEvent = Event & { target: HTMLInputElement };
 type InputFocusEvent = FocusEvent & { target: HTMLInputElement };
 type SelectEvent = Event & { target: HTMLSelectElement };
 
-const defaultOptions: TOptions = {
+const defaultOptions: Options = {
   maxWidth: 2000,
   maxHeight: 2000,
   scale: .5,
@@ -17,7 +17,7 @@ const defaultOptions: TOptions = {
 
 export function setupConverter() {
 
-  let options: TOptions = { ...defaultOptions };
+  let options: Options = { ...defaultOptions };
 
   const handleTypeChange = (e: SelectEvent) => {
     const value = e.target.value;
