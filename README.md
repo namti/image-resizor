@@ -82,9 +82,5 @@ enum ImageType {
   heif = 'image/heif',
   webp = 'image/webp',
 }
-static ImageResizor.getSupportedTypes(): typeof ImageType 
+static getSupportedTypes(): typeof ImageType 
 ```
-
-### Static Methods
-
-`getSupportedTypes()` returns an object with file types and MIME types that can be converted.
