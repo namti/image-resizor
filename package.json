@@ -1,7 +1,7 @@
 {
   "name": "image-resizor",
   "description": "Effortlessly convert, resize, and compress images (jpg, png, heic, heif, webp) into optimized png and jpg formats, all within the browser environment.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Jasper Yan",
   "license": "ISC",
   "type": "module",
