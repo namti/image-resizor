@@ -12,7 +12,7 @@ export enum ImageType {
 
 export type OutputImageType = 'image/jpeg' | 'image/png';
 
-export type TBaseOptions = {
+export type BaseOptions = {
 	/**
 	 * Max width of the output image
 	 * @default 2000
@@ -41,7 +41,7 @@ export type TBaseOptions = {
 	outputType: 'image/jpeg' | 'image/png',
 };
 
-export type TJpegOptions = TBaseOptions & {
+export type JpegOptions = BaseOptions & {
 	/**
 	 * Output type
 	 */
@@ -53,16 +53,16 @@ export type TJpegOptions = TBaseOptions & {
 	quality: number;
 };
 
-export type TOtherFormatOptions = TBaseOptions & {
+export type OtherFormatOptions = BaseOptions & {
 	outputType: 'image/png';
 };
 
-export type TOptions = TJpegOptions | TOtherFormatOptions;
+export type Options = JpegOptions | OtherFormatOptions;
 
 
 class ImageResizor {
 
-  options: TOptions;
+  options: Options;
   file: Blob | File;
   image: HTMLImageElement | null;
   imageInfo: {
@@ -72,7 +72,7 @@ class ImageResizor {
   canvas: HTMLCanvasElement | null;
   canvasContext: CanvasRenderingContext2D | null;
 
-  constructor(file: Blob | File, options?: Partial<TOptions>) {
+  constructor(file: Blob | File, options?: Partial<Options>) {
     this.options = { ...defaultOptions, ...options };
     this.file = file;
     this.image = null;
@@ -336,7 +336,7 @@ const defaultCanvas = {
   height: 100,
 };
 
-const defaultOptions: TOptions = {
+const defaultOptions: Options = {
   maxWidth: 2000,
   maxHeight: 2000,
   scale: 1,
