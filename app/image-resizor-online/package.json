@@ -10,6 +10,7 @@
     "publish": "npm run build && touch ./dist/.nojekyll && gh-pages -d ./dist -t true"
   },
   "devDependencies": {
+    "sass": "^1.77.1",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
   },
