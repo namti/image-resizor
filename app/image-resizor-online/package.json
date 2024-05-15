@@ -12,5 +12,8 @@
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "filesize": "^10.1.2"
   }
 }

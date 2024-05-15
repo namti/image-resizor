@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import ImageResizor from 'image-resizor';
 import { Options } from '../../../dist/imageResizor';
+import { filesize } from 'filesize';
 
 type InputEvent = Event & { target: HTMLInputElement };
 type InputFocusEvent = FocusEvent & { target: HTMLInputElement };
@@ -10,7 +11,7 @@ const defaultOptions: Options = {
   maxWidth: 2000,
   maxHeight: 2000,
   scale: .5,
-  quality: .5,
+  quality: .9,
   backgroundColor: '#ffffff',
   outputType: 'image/jpeg',
 };
@@ -78,8 +79,11 @@ export function setupConverter() {
         instance.toBlob()
           .then(blob => {
             if(blob){
-              console.log('Converted', blob, 'Size', `${blob.size}bytes`);
-              blob.size;
+              const size = filesize(blob.size, { standard: 'jedec' });
+              console.log('Converted', blob, 'Size', `${size}bytes`);
+
+              elConvertedSize.style.display = 'block';
+              elConvertedSize.innerText = size;
             }
           });
 
@@ -90,6 +94,7 @@ export function setupConverter() {
 
           elConvertedImage.style.display = '';
           elConvertedImage.src = dataUrl;
+
         }
       })
       .catch((e: Error) => {
@@ -112,9 +117,13 @@ export function setupConverter() {
   const resetConvertedResult = () => {
     elConvertedImage.removeAttribute('src');
     elConvertedImage.style.display = 'none';
+
+    elConvertedSize.style.display = 'none';
+    elConvertedSize.innerText = '';
   };
 
   const elConvertedImage: HTMLImageElement = document.querySelector('#img-preview')!;
+  const elConvertedSize: HTMLImageElement = document.querySelector('#img-size')!;
 
   const elImageFile: HTMLInputElement = document.querySelector('#file-select')!;
   const elOptionType: HTMLSelectElement = document.querySelector('#option-type')!;
